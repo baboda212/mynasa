@@ -1,15 +1,33 @@
 /* style.css */
+/* 버튼 줄내림 금지 */
+.btn{
+    white-space: nowrap;
+}
+
 .container, .container-fluid{
     /* outline: 1px solid #ddd; */
 }
 #main-title{
     width: 100%;
-    height: 800px;
+    height: 100vh;
     background: #ccc;
-    background-image: url(../images/ISS_astronaut.jpg);
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0.3)
+      ),url(../images/ISS_astronaut.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;    
     color: #fff;
+}
+#main-title .title{
+    height: calc(100%-90px);
+    /* display: flex;
+    flex-direction: column; */
+}
+#main-title .title h1{
+    margin-bottom: 1.2rem;
+    font-weight: bold;
 }
 #main-title .title p{
     font-size: 25px;
@@ -17,3 +35,249 @@
 #main-title .title{
     padding-top: 50px;
 }
+/* 모바일 배경처리 */
+@media screen and (max-width: 578px){
+    nav {
+        background: #333;
+        padding: 20px !important;
+    }
+}
+ 
+/* section community */
+#community {
+    background-color: #000;
+    background-image: 
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)),
+    url(../images/cleveland_at_night.jpg);
+    background-repeat: no-repeat;
+   /*  background-size: cover; */
+    /* 배경고정 위에서 고정 */
+   /*  background-attachment: contain;  */
+    background-position: center top;
+    background-attachment: fixed;
+}
+.my-text-light {
+    color: #98daf1;
+}
+.my-text-dark {
+    color: #0b3d91;
+}
+#exploration a, #community a{
+    text-decoration: none;
+}
+h2{
+    font-weight: bold;
+}
+
+/* Engage with us! */
+#engage a .box1 {
+    position: relative;
+}
+#engage a .box1 h4{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background-color: rgba(11, 61, 145, 0.8);
+    margin-bottom: 15px;
+    padding: 5px;
+}
+#engage a .box2 {
+    display: none;
+}
+
+@media (min-width:780px) {
+    #engage a {
+        width: 100%;
+        position: relative;
+    }   
+    #engage a .box1 h4{
+        position: absolute;
+        bottom: 0;
+        width: 98%;
+        height: 15%;
+        background-color: rgba(11, 61, 145, 0.8);
+        margin-bottom: 15px;
+        padding: 4%;
+    }
+    #engage a .box2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        outline: 1px solid black;
+        display: none;
+        background-color: #0b3d91;
+        color: #fff;
+        font-size: 16px;
+        height: 100%;
+        padding: 10px;
+    }
+    #engage a:hover >.box2{
+       display: block;
+    }
+    #engage a:hover >.box1{
+        visibility: hidden;
+     } 
+}
+
+/* we are power소개*/
+#exploration{
+    background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+    url(../images/mars-rover-tracks.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    
+}
+
+/* #exploration .container img{
+    width: 100%;
+} */
+ #exploration a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#exploration a img {
+  display: block;
+  width: 100%;
+ /*  height: 100%;  */
+  object-fit: cover;
+}
+
+#exploration a h4 {
+  width: 100%;
+  height: 50px;
+  background: rgba(11, 61, 145, 0.8);
+  word-break: keep-all;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+} 
+/* We’re with you when you fly */
+#fly {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+      url(../images/aero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+.fly_box {
+    display: block;
+    width: 100%;
+    position: relative;
+    /* outline: 3px solid #fff; */
+  }
+  
+.fly_box img {
+    width: 100%;
+  }
+  
+#fly a h4 {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(11, 61, 145, 0.8);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    word-break: keep-all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+/* ---------- footer start ---------- */
+#footer {
+    background: rgb(33, 33, 33);
+    color: #fff;
+  }
+  #footer .footer-logo {
+    display: flex;
+    align-items: center;
+  }
+  #footer .footer-logo span {
+    font-size: 16.5px;
+    font-weight: 700;
+  }
+  #footer p {
+    line-height: 1.5;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  #footer .col-rigth {
+    text-align: right;
+  }
+  #footer .footer-icon {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  #footer .footer-icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    text-decoration: none;
+  }
+  #footer .footer-icon a:first-child {
+    color: rgb(59, 89, 153);
+  }
+  #footer .footer-icon a:nth-child(2) {
+    color: rgb(66, 156, 214);
+  }
+  #footer .footer-icon a:nth-child(3) {
+    color: red;
+  }
+  #footer .footer-icon a:nth-child(4) {
+    color: rgb(193, 54, 133);
+  }
+  #footer .footer-box-right h4 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  #footer a {
+    text-decoration: underline;
+  }
+  @media (max-width: 995px) {
+    #footer .footer-logo {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #footer .footer-logo span {
+      margin-left: 0 !important;
+      margin-top: 10px;
+    }
+    #footer .footer-icon {
+      gap: 10px;
+    }
+  }
+  @media (max-width: 600px) {
+    #footer .row {
+      display: flex;
+      flex-direction: column;
+    }
+    #footer .footer-box-left p {
+      margin-top: 0 !important;
+    }
+    #footer .col-left {
+      width: 100%;
+    }
+    #footer .col-rigth {
+      margin-top: 20px;
+      text-align: left;
+      width: 100%;
+    }
+    #footer .footer-icon {
+      justify-content: flex-start;
+    }
+  }
+  /* ---------- footer end ---------- */
